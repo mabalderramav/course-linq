@@ -1,0 +1,5 @@
+# Init project
+dotnet new console
+
+# run project
+dotnet run
