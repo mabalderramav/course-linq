@@ -16,4 +16,36 @@ public class LinqQueries
     {
         return bookCollection;
     }
+
+    public IEnumerable<Book> FilterByPublishedDate(DateTime publishedDate)
+    {
+        return bookCollection.Where(book => book.PublishedDate == publishedDate);
+    }
+
+    public IEnumerable<Book> FilterByPublishedDateRange(DateTime startDate, DateTime endDate)
+    {
+        return bookCollection.Where(book => book.PublishedDate >= startDate && book.PublishedDate <= endDate);
+    }
+
+    public IEnumerable<Book> FilterByPublishedDateAfter2000()
+    {
+        // Expresion method
+        // return bookCollection.Where(book => book.PublishedDate.Year > 2000);
+
+        // Query method
+        return from book in bookCollection
+               where book.PublishedDate.Year > 2000
+               select book;
+    }
+
+    public IEnumerable<Book> FilterWhitMoreThan250PagesAndContainsInActionWord()
+    {
+        // Expresion method
+        // return bookCollection.Where(book => book.PageCount > 250 && book.Title.Contains("in Action"));
+
+        // Query method
+        return from book in bookCollection
+               where book.PageCount > 250 && book.Title.Contains("in Action")
+               select book;
+    }
 }

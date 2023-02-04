@@ -1,5 +1,13 @@
 ﻿LinqQueries queries = new LinqQueries();
-PrintValues(queries.AllCollection());
+
+// All books
+// PrintValues(queries.AllCollection());
+
+// Books after 2000
+// PrintValues(queries.FilterByPublishedDateAfter2000());
+
+// Books with more than 250 pages and contains "In Action" word
+PrintValues(queries.FilterWhitMoreThan250PagesAndContainsInActionWord());
 
 void PrintValues(IEnumerable<Book> bookList)
 {
