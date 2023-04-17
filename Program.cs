@@ -7,7 +7,10 @@
 // PrintValues(queries.FilterByPublishedDateAfter2000());
 
 // Books with more than 250 pages and contains "In Action" word
-PrintValues(queries.FilterWhitMoreThan250PagesAndContainsInActionWord());
+// PrintValues(queries.FilterWhitMoreThan250PagesAndContainsInActionWord());
+
+// Books of Python category
+PrintValues(queries.FilterBooksOfPythonCategory());
 
 void PrintValues(IEnumerable<Book> bookList)
 {

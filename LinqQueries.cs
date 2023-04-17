@@ -48,4 +48,14 @@ public class LinqQueries
                where book.PageCount > 250 && book.Title.Contains("in Action")
                select book;
     }
+
+    public bool allBooksHasStatus()
+    {
+        return bookCollection.All(book => book.Status != null && book.Status != string.Empty);
+    }
+
+    public IEnumerable<Book> FilterBooksOfPythonCategory()
+    {
+        return bookCollection.Where(book => book.Categories.Contains("Python"));
+    }
 }
