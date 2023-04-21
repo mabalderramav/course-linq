@@ -10,7 +10,13 @@
 // PrintValues(queries.FilterWhitMoreThan250PagesAndContainsInActionWord());
 
 // Books of Python category
-PrintValues(queries.FilterBooksOfPythonCategory());
+// PrintValues(queries.FilterBooksOfPythonCategory());
+
+// Books of Java filter by name and order by ascending
+// PrintValues(queries.FilterBooksOfJavaByNameAscending());
+
+// Books with more than 450 pages order by descending
+PrintValues(queries.FilterBooksMoreThan450PagesOrderByDescending());
 
 void PrintValues(IEnumerable<Book> bookList)
 {
